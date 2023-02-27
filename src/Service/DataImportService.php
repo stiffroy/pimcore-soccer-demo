@@ -6,7 +6,7 @@ use App\Helper\HeaderMatcherHelper;
 use Carbon\Carbon;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
-use Pimcore\Model\Asset\Image;
+use Pimcore\Model\DataObject\Data\ExternalImage;
 use Pimcore\Model\DataObject\Data\GeoCoordinates;
 use Pimcore\Model\DataObject\Location;
 use Pimcore\Model\DataObject\Player;
@@ -90,7 +90,7 @@ class DataImportService
 
     private function createOrUpdateTeamObject(Team $team, array $teamInfo): Team
     {
-        $logo = $this->fillImageData($teamInfo);
+        $logo = new ExternalImage($teamInfo['logo']);
 
         $team->setName($teamInfo['name'])
             ->setLogo($logo)
@@ -105,18 +105,6 @@ class DataImportService
         $team->save();
 
         return $team;
-    }
-
-    private function fillImageData(array $teamInfo): Image
-    {
-        $logo = new Image();
-        $logo->setFilename($teamInfo['name'] . ' logo')
-            ->setData(file_get_contents($teamInfo['logo']))
-            ->setParentId(1)
-        ;
-        $logo->save();
-
-        return $logo;
     }
 
     private function createLocation(array $teamInfo, int $parentId): Location

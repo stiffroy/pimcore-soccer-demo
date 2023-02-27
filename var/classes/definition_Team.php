@@ -6,7 +6,7 @@
  *
  * Fields Summary:
  * - name [input]
- * - logo [image]
+ * - logo [externalImage]
  * - foundingYear [date]
  * - zvrZahl [input]
  * - trainer [input]
@@ -21,7 +21,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Team',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1677474805,
+   'modificationDate' => 1677515505,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -116,7 +116,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValueGenerator' => '',
               )),
               1 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
+              Pimcore\Model\DataObject\ClassDefinition\Data\ExternalImage::__set_state(array(
                  'name' => 'logo',
                  'title' => 'Logo',
                  'tooltip' => '',
@@ -127,7 +127,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
-                 'fieldtype' => 'image',
+                 'fieldtype' => 'externalImage',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -135,9 +135,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
-                 'width' => '',
-                 'height' => '',
-                 'uploadPath' => '',
+                 'previewWidth' => NULL,
+                 'inputWidth' => NULL,
+                 'previewHeight' => NULL,
               )),
               2 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
