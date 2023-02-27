@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <header class="mt-5 mb-3 text-center">
+                    <h1>List of the teams</h1>
+                </header>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Logo</th>
+                        <th scope="col">Number of Players</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for team in teams %}
+                        <tr>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td>{{ team.name }}</td>
+                            <td>
+                                <img alt="{{ team.name }} logo" src="{{ team.logo.getUrl() }}" width="50px" />
+                            </td>
+                            <td>{{ team.players|length }}</td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
