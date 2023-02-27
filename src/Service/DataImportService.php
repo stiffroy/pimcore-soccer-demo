@@ -62,7 +62,7 @@ class DataImportService
         $teamObject = $this->searchForExistingTeam($teamInfo['zvrZahl']) ?: new Team();
         $team = $this->createOrUpdateTeamObject($teamObject, $teamInfo);
         $location = $this->createLocation($teamInfo, $team->getId());
-        $team->setCity(Document::getById($location->getId()));
+        $team->setCity(Location::getById($location->getId()));
         $this->createPlayers($team);
         $team->save();
     }
