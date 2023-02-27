@@ -44,6 +44,7 @@ services:
         exclude:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
+            - '../src/Helper/'
             - '../src/Kernel.php'
 
     # Example custom templating helper
