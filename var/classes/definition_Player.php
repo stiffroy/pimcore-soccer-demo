@@ -9,6 +9,7 @@
  * - number [input]
  * - age [input]
  * - position [input]
+ * - team [manyToOneRelation]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -17,7 +18,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Player',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1677451951,
+   'modificationDate' => 1677455855,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -188,6 +189,46 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'unique' => false,
              'showCharCount' => false,
              'defaultValueGenerator' => '',
+          )),
+          4 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+             'name' => 'team',
+             'title' => 'Team',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'manyToOneRelation',
+             'relationType' => true,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'classes' => 
+            array (
+              0 => 
+              array (
+                'classes' => 'Team',
+              ),
+            ),
+             'pathFormatterClass' => '',
+             'width' => '',
+             'assetUploadPath' => '',
+             'objectsAllowed' => true,
+             'assetsAllowed' => false,
+             'assetTypes' => 
+            array (
+            ),
+             'documentsAllowed' => false,
+             'documentTypes' => 
+            array (
+            ),
           )),
         ),
          'locked' => false,

@@ -10,6 +10,8 @@
  * - foundingYear [date]
  * - zvrZahl [input]
  * - trainer [input]
+ * - players [reverseObjectRelation]
+ * - city [manyToOneRelation]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -18,7 +20,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Team',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1677455224,
+   'modificationDate' => 1677455954,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -236,6 +238,45 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'showCharCount' => false,
              'defaultValueGenerator' => '',
           )),
+          1 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\ReverseObjectRelation::__set_state(array(
+             'name' => 'players',
+             'title' => 'Players',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'reverseObjectRelation',
+             'relationType' => true,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'classes' => 
+            array (
+            ),
+             'pathFormatterClass' => '',
+             'width' => '',
+             'height' => '',
+             'maxItems' => NULL,
+             'visibleFields' => NULL,
+             'allowToCreateNewObject' => true,
+             'optimizedAdminLoading' => false,
+             'enableTextSelection' => false,
+             'visibleFieldDefinitions' => 
+            array (
+            ),
+             'ownerClassName' => 'Player',
+             'ownerClassId' => NULL,
+             'ownerFieldName' => 'team',
+             'lazyLoading' => true,
+          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
@@ -263,6 +304,46 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'permissions' => NULL,
          'children' => 
         array (
+          0 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+             'name' => 'city',
+             'title' => 'City',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'manyToOneRelation',
+             'relationType' => true,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'classes' => 
+            array (
+              0 => 
+              array (
+                'classes' => 'Location',
+              ),
+            ),
+             'pathFormatterClass' => '',
+             'width' => '',
+             'assetUploadPath' => '',
+             'objectsAllowed' => true,
+             'assetsAllowed' => false,
+             'assetTypes' => 
+            array (
+            ),
+             'documentsAllowed' => false,
+             'documentTypes' => 
+            array (
+            ),
+          )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
