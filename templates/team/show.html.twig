@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <header class="mt-5 mb-3 text-center">
+                    <img src="{{ team.logo.url }}" alt="{{ team.name }} logo" width="200px">
+                    <h1>{{ team.name }}</h1>
+                </header>
+                <table class="table table-striped">
+                    <thead>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Founding Year</th>
+                        <td>{{ team.foundingYear|date('Y') }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ZVR Zahl</th>
+                        <td>{{ team.zvrZahl }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Trainer</th>
+                        <td>{{ team.trainer }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Players</th>
+                        <td>
+                            {% include 'partials/player-list.html.twig' with {'players': team.players} %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Venue</th>
+                        <td>{{ team.venue }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Location</th>
+                        <td>{{ dump(team.city) }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <a class="btn btn-warning" href="{{ path('app_team_list') }}">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

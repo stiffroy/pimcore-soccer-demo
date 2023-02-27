@@ -18,4 +18,14 @@ class TeamController extends AbstractController
             'teams' => $teams,
         ]);
     }
+
+    #[Route('/teams/{id}', name: 'app_team_details')]
+    public function show(int $id): Response
+    {
+        $team = Team::getById($id);
+
+        return $this->render('team/show.html.twig', [
+            'team' => $team,
+        ]);
+    }
 }

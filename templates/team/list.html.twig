@@ -26,7 +26,7 @@
                                 <img alt="{{ team.name }} logo" src="{{ team.logo.getUrl() }}" width="50px" />
                             </td>
                             <td>{{ team.players|length }}</td>
-                            <td><a href="#">Details</a></td>
+                            <td><a href="{{ path('app_team_details', {'id': team.id}) }}">Details</a></td>
                         </tr>
                     {% endfor %}
                     </tbody>
